@@ -21,21 +21,16 @@ class GistHome extends PureComponent {
   }
 
   render() {
-    console.log(this.state.gists);
     let gistList = this.state.gists.map(g => (
-      <div>
-        <i className="fas fa-code" />
-        <li>
+      <div className="gist_link" key={g.id}>
+        <i className="fas fa-code code_icon" />
+        <div className="gist_info">
           <a href={g.id}>{g.filename}</a>
-          {g.description}
-        </li>
+          <p>{g.description}</p>
+        </div>
       </div>
     ));
-    return (
-      <div className="gist_list">
-        <ul>{gistList}</ul>
-      </div>
-    );
+    return <div className="gist_list">{gistList}</div>;
   }
 }
 export default GistHome;

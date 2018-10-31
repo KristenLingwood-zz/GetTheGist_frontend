@@ -37,9 +37,6 @@ export async function callAPI(method, path, payload = null) {
       url: path,
       data: payload
     });
-    console.log(`RESPONSE ${method.toUpperCase()} to ${path}`);
-    console.log('status is', response.status);
-    console.log('body is', response.data);
 
     return response.data;
   } catch (err) {

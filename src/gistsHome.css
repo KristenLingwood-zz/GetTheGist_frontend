@@ -1,3 +1,18 @@
 .gist_list {
   margin-top: 100px;
+  display: flex;
+}
+
+.gist_link {
+  display: flex;
+  align-items: center;
+  border: 3px solid darkgray;
+  margin: 1%;
+  width: 50%;
+}
+
+.code_icon {
+  font-size: 18px;
+  padding: 3%;
+  padding-right: 10%;
 }
