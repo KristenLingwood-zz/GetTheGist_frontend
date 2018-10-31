@@ -28,13 +28,13 @@ class Header extends PureComponent {
   };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ searchText: e.target.value });
   };
 
   render() {
     return (
       <Navbar inverse defaultExpanded fixedTop fluid>
-        {/* <Image src={codeGirl} thumbnail responsive /> */}
+        <Image src={codeGirl} thumbnail responsive />
         <Navbar.Header>
           <Navbar.Brand>
             <a href="/">GetTheGist</a>
@@ -46,8 +46,8 @@ class Header extends PureComponent {
             <FormGroup>
               <FormControl
                 type="text"
-                placeholder="Search"
                 value={this.state.searchText}
+                placeholder="Search"
                 onChange={this.handleChange}
               />
             </FormGroup>{' '}
@@ -56,7 +56,7 @@ class Header extends PureComponent {
             </Button>
           </Navbar.Form>
           <Nav>
-            <NavItem eventKey={1} href="/">
+            <NavItem eventKey={1} href="/gists">
               All gists
             </NavItem>
             <NavItem eventKey={2} href="https://github.com">
