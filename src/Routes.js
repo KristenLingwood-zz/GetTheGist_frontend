@@ -9,7 +9,7 @@ class Routes extends PureComponent {
       <div className="container">
         <Switch>
           <Route exact path="/gists" component={GistsHome} />
-          <Route exact path="/gists/:gistID" component={Gist} />
+          <Route path="/gists/:gistID" component={Gist} />
         </Switch>
       </div>
     );

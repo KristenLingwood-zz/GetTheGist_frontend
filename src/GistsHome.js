@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react';
 import './gistsHome.css';
 import { callAPI } from './services/api';
+import GistForm from './GistForm';
 
 class GistHome extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      gists: [],
-      loading: true
-    };
-  }
+  state = {
+    gists: [],
+    loading: true
+  };
+
   async componentDidMount() {
     let gistList;
     try {
@@ -25,12 +24,19 @@ class GistHome extends PureComponent {
       <div className="gist_link" key={g.id}>
         <i className="fas fa-code code_icon" />
         <div className="gist_info">
-          <a href={g.id}>{g.filename}</a>
+          <a href={`/gists/${g.id}`}>{g.filename}</a>
           <p>{g.description}</p>
         </div>
       </div>
     ));
-    return <div className="gist_list">{gistList}</div>;
+    return (
+      <div>
+        <div className="gist_list">{gistList}</div>
+        <div>
+          <GistForm />
+        </div>
+      </div>
+    );
   }
 }
 export default GistHome;

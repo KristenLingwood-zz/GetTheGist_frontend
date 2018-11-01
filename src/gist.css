@@ -1,0 +1,12 @@
+.found_gist {
+  margin-top: 100px;
+  display: flex;
+}
+
+#gist_description {
+  color: blue;
+}
+
+.gist_info {
+  color: black;
+}
