@@ -33,7 +33,7 @@ class GistHome extends PureComponent {
       <div>
         <div className="gist_list">{gistList}</div>
         <div>
-          <GistForm />
+          <GistForm update={false} foundGist={null} />
         </div>
       </div>
     );

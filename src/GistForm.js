@@ -6,22 +6,21 @@ class GistForm extends PureComponent {
   state = {
     description: '',
     filename: '',
-    content: ''
+    content: '',
+    loading: false
   };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
   };
 
-  // take state of form and send post to /gists
-  handleSubmit = async e => {
+  handleNewSubmit = async e => {
     let payload = {
       description: this.state.description,
       filename: this.state.filename,
       content: this.state.content,
       extension: ''
     };
-    console.log(payload);
     try {
       await callAPI('post', 'http://localhost:3000/gists', payload);
       window.alert('Thanks for creating a new gist. We got the gist of it!');
@@ -34,8 +33,41 @@ class GistForm extends PureComponent {
       console.log(err);
     }
   };
+  handleUpdateSubmit = async e => {
+    console.log('update clicked');
+
+    let payload = {
+      description: this.state.description || this.props.foundGist.description,
+      filename: this.state.filename || this.props.foundGist.filename,
+      content: this.state.content || this.props.foundGist.content,
+      extension: ''
+    };
+    try {
+      let gistID = this.props.gistID;
+      console.log(gistID);
+      await callAPI('patch', `http://localhost:3000/gists/${gistID}`, payload);
+      window.alert('Your gist has been updated!');
+      this.setState({
+        description: '',
+        filename: '',
+        content: ''
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   render() {
+    let buttonText;
+    let handleSubmit;
+    if (this.props.update) {
+      buttonText = 'Update gist';
+      handleSubmit = this.handleUpdateSubmit;
+    } else {
+      buttonText = 'Create a public gist';
+      handleSubmit = this.handleNewSubmit;
+    }
+
     return (
       <form>
         <FormGroup controlId="formBasicText">
@@ -61,8 +93,8 @@ class GistForm extends PureComponent {
             onChange={this.handleChange}
           />
         </FormGroup>
-        <Button bsStyle="primary" onClick={this.handleSubmit}>
-          Create public gist
+        <Button bsStyle="primary" onClick={handleSubmit}>
+          {buttonText}
         </Button>
       </form>
     );
