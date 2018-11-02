@@ -15,10 +15,11 @@ class Gist extends PureComponent {
     let foundGist;
     try {
       foundGist = await callAPI('get', `http://localhost:3000/gists/${gistID}`);
-      this.setState({ foundGist: foundGist, loading: false });
+      this.setState({ ...this.state, foundGist: foundGist });
     } catch (err) {
       console.log(err);
     }
+    this.setState({ ...this.state, loading: false });
   }
 
   toggleEdit = () => {
@@ -59,7 +60,9 @@ class Gist extends PureComponent {
     } else {
       editForm = <div />;
     }
-    return (
+    return this.state.loading ? (
+      <h4 id="loading_msg">Getting the gist of it...</h4>
+    ) : (
       <div>
         <div className="found_gist">
           <p id="gist_description">{description}</p>

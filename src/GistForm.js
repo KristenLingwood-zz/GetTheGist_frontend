@@ -55,6 +55,8 @@ class GistForm extends PureComponent {
         filename: '',
         content: ''
       });
+      // ideally shouldn't need, should be able to utilize component lifecycle
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }

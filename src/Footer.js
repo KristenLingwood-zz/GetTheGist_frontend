@@ -9,7 +9,7 @@ class Footer extends PureComponent {
       <div className="footer_links">
         <div className="footer_left">
           <p>
-            <i className="far fa-copyright" /> Kristen Lingwood
+            <i className="far fa-copyright" /> 2018 Kristen Lingwood
           </p>
           <Link to="http://kristenlingwood.com">Terms</Link>
           <Link to="http://kristenlingwood.com">Privacy</Link>

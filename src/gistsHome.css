@@ -22,6 +22,6 @@
   text-decoration: underline;
 }
 
-i {
-  color: white;
+#loading_msg {
+  margin-top: 200px;
 }

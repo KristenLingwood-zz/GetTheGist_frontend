@@ -13,10 +13,11 @@ class GistHome extends PureComponent {
     let gistList;
     try {
       gistList = await callAPI('get', 'http://localhost:3000/gists');
-      this.setState({ gists: gistList, loading: false });
+      this.setState({ ...this.state, gists: gistList });
     } catch (err) {
       console.log('err', err);
     }
+    this.setState({ ...this.state, loading: false });
   }
 
   render() {
@@ -34,7 +35,9 @@ class GistHome extends PureComponent {
     if (gistList.length > 4) {
       gistList = gistList.slice(0, 4);
     }
-    return (
+    return this.state.loading ? (
+      <h4 id="loading_msg">Getting the gist of it...</h4>
+    ) : (
       <div>
         <div className="gist_list">{gistList}</div>
         <div>
