@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { FormControl, FormGroup, Button } from 'react-bootstrap';
-import { callAPI } from './services/api';
+import { callAPI } from '../../services/api';
 import './gistForm.css';
 
 class GistForm extends PureComponent {

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './gistsHome.css';
-import { callAPI } from './services/api';
-import GistForm from './GistForm';
+import { callAPI } from '../../services/api';
+import GistForm from '../GistForm';
 
 class GistHome extends PureComponent {
   state = {

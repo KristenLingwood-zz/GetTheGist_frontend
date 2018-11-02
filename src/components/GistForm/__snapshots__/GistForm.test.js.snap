@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GistForm /> matches the snapshot 1`] = `
+<div
+  className="gist_form"
+>
+  <form
+    action=""
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        className="description form-control"
+        id="formBasicText"
+        name="description"
+        onChange={[Function]}
+        placeholder="Gist description"
+        type="text"
+        value=""
+      />
+      <input
+        className="filename form-control"
+        id="formBasicText"
+        name="filename"
+        onChange={[Function]}
+        placeholder="Filename including extension"
+        type="text"
+        value=""
+      />
+      <textarea
+        className="form-control"
+        id="formBasicText"
+        name="content"
+        onChange={[Function]}
+        placeholder="Gist content"
+        rows={20}
+        type="textarea"
+        value=""
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Create a public gist
+    </button>
+  </form>
+</div>
+`;

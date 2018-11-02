@@ -1,11 +1,17 @@
-Get The Gist is a single page app built with React.
+## Get the gist is a Github Gist clone
 
-### Run the App:
+#### built with React.js
 
-Start the backend server found here: `https://github.com/KristenLingwood/GetTheGist_backend` (directions in repo README)
+### To run frontend locally:
 
-To run the front end of the app, clone this repo and in the project directory run `npm install` to install project dependencies. Then run `npm start`. Open `http://localhost:3001` in your browser. You may just need to type Y to open in new port when prompted by your terminal.
+1. Start the backend server found here: `https://github.com/KristenLingwood/GetTheGist_backend` (directions in repo README)
+2. Fork/clone the repository
+3. cd into repo's folder
+4. `npm install`
+5. `npm start` (You may just need to type Y to open in new port when prompted by your terminal.)
 
-To see tests, run `npm test` in the terminal.
+### Tests:
+
+1. `npm test`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

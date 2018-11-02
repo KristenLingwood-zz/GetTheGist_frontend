@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> matches the snapshot 1`] = `
+<nav
+  className="navbar navbar-inverse navbar-fixed-top"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="navbar-header"
+    >
+      <a
+        className="navbar-brand"
+        href="/gists"
+      >
+        <i
+          className="fas fa-cat"
+        />
+          
+        GetTheGist
+      </a>
+      <button
+        className="navbar-toggle"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="sr-only"
+        >
+          Toggle navigation
+        </span>
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+      </button>
+    </div>
+    <div
+      aria-expanded={null}
+      className="navbar-collapse collapse in"
+    >
+      <div
+        className="navbar-form navbar-left"
+      >
+        <div
+          className="form-group"
+        >
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Search"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          className="btn btn-default"
+          disabled={false}
+          onSubmit={[Function]}
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+      <ul
+        className="nav navbar-nav"
+        role={null}
+      >
+        <li
+          className=""
+          role="presentation"
+        >
+          <a
+            href="/gists"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            All gists
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+        >
+          <a
+            href="https://github.com"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            GitHub
+          </a>
+        </li>
+      </ul>
+      <ul
+        className="nav navbar-nav navbar-right"
+        role={null}
+      >
+        <li
+          className=""
+          role="presentation"
+        >
+          <a
+            href="/new"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            New gist
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+          >
+            User info
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;

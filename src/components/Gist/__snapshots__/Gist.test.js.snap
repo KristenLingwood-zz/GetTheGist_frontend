@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gist /> matches the snapshot 1`] = `
+<h4
+  id="loading_msg"
+>
+  Getting the gist of it...
+</h4>
+`;

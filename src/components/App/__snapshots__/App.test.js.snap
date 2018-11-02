@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> matches the snapshot 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="navbar navbar-inverse navbar-fixed-top"
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="navbar-header"
+      >
+        <a
+          className="navbar-brand"
+          href="/gists"
+        >
+          <i
+            className="fas fa-cat"
+          />
+            
+          GetTheGist
+        </a>
+        <button
+          className="navbar-toggle"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="sr-only"
+          >
+            Toggle navigation
+          </span>
+          <span
+            className="icon-bar"
+          />
+          <span
+            className="icon-bar"
+          />
+          <span
+            className="icon-bar"
+          />
+        </button>
+      </div>
+      <div
+        aria-expanded={null}
+        className="navbar-collapse collapse in"
+      >
+        <div
+          className="navbar-form navbar-left"
+        >
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              onChange={[Function]}
+              placeholder="Search"
+              type="text"
+              value=""
+            />
+          </div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onSubmit={[Function]}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <ul
+          className="nav navbar-nav"
+          role={null}
+        >
+          <li
+            className=""
+            role="presentation"
+          >
+            <a
+              href="/gists"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              All gists
+            </a>
+          </li>
+          <li
+            className=""
+            role="presentation"
+          >
+            <a
+              href="https://github.com"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              GitHub
+            </a>
+          </li>
+        </ul>
+        <ul
+          className="nav navbar-nav navbar-right"
+          role={null}
+        >
+          <li
+            className=""
+            role="presentation"
+          >
+            <a
+              href="/new"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+            >
+              New gist
+            </a>
+          </li>
+          <li
+            className=""
+            role="presentation"
+          >
+            <a
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+            >
+              User info
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div
+    className="container"
+  >
+    <h4
+      id="loading_msg"
+    >
+      Getting the gist of it...
+    </h4>
+  </div>
+  <div
+    className="footer_links"
+  >
+    <div
+      className="footer_left"
+    >
+      <p>
+        <i
+          className="far fa-copyright"
+        />
+         2018 Kristen Lingwood
+      </p>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Terms
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Privacy
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Security
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Status
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Help
+      </a>
+    </div>
+    <img
+      alt="codercat"
+      src="femalecodercat.jpg"
+    />
+    <div
+      className="footer_right"
+    >
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Contact Kristen
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Pricing
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        API
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        Blog
+      </a>
+      <a
+        href="http://kristenlingwood.com"
+      >
+        About
+      </a>
+    </div>
+  </div>
+</div>
+`;
