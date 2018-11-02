@@ -8,7 +8,8 @@ import {
   Button,
   Image
 } from 'react-bootstrap';
-import { codeGirl } from './assets/femalecodercat.jpg';
+import './assets/femalecodercat.jpg';
+import './header.css';
 
 const DEFAULT_STATE = {
   searchText: ''
@@ -34,9 +35,9 @@ class Header extends PureComponent {
   render() {
     return (
       <Navbar inverse defaultExpanded fixedTop fluid>
-        <Image src={codeGirl} thumbnail responsive />
         <Navbar.Header>
           <Navbar.Brand>
+            <Image src={'/assets/femalecodercat.jpg'} circle responsive />
             <a href="/">GetTheGist</a>
           </Navbar.Brand>
           <Navbar.Toggle />

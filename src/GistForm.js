@@ -7,7 +7,8 @@ class GistForm extends PureComponent {
     description: '',
     filename: '',
     content: '',
-    loading: false
+    loading: false,
+    fireRedirect: false
   };
 
   handleChange = e => {
@@ -27,7 +28,8 @@ class GistForm extends PureComponent {
       this.setState({
         description: '',
         filename: '',
-        content: ''
+        content: '',
+        fireRedirect: true
       });
     } catch (err) {
       console.log(err);
@@ -69,34 +71,36 @@ class GistForm extends PureComponent {
     }
 
     return (
-      <form>
-        <FormGroup controlId="formBasicText">
-          <FormControl
-            type="text"
-            value={this.state.description}
-            name="description"
-            placeholder="Gist description"
-            onChange={this.handleChange}
-          />
-          <FormControl
-            type="text"
-            value={this.state.filename}
-            name="filename"
-            placeholder="Filename including extension"
-            onChange={this.handleChange}
-          />
-          <FormControl
-            type="textarea"
-            value={this.state.content}
-            name="content"
-            placeholder="Gist content"
-            onChange={this.handleChange}
-          />
-        </FormGroup>
-        <Button bsStyle="primary" onClick={handleSubmit}>
-          {buttonText}
-        </Button>
-      </form>
+      <div>
+        <form action="">
+          <FormGroup controlId="formBasicText">
+            <FormControl
+              type="text"
+              value={this.state.description}
+              name="description"
+              placeholder="Gist description"
+              onChange={this.handleChange}
+            />
+            <FormControl
+              type="text"
+              value={this.state.filename}
+              name="filename"
+              placeholder="Filename including extension"
+              onChange={this.handleChange}
+            />
+            <FormControl
+              type="textarea"
+              value={this.state.content}
+              name="content"
+              placeholder="Gist content"
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <Button bsStyle="primary" onClick={handleSubmit}>
+            {buttonText}
+          </Button>
+        </form>
+      </div>
     );
   }
 }

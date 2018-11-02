@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import GistsHome from './GistsHome';
 import Gist from './Gist';
-import GistForm from './GistForm';
 
 class Routes extends PureComponent {
   render() {
