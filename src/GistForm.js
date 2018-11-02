@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { FormControl, FormGroup, Button } from 'react-bootstrap';
 import { callAPI } from './services/api';
+import './gistForm.css';
 
 class GistForm extends PureComponent {
   state = {
@@ -71,10 +72,11 @@ class GistForm extends PureComponent {
     }
 
     return (
-      <div>
+      <div className="gist_form">
         <form action="">
           <FormGroup controlId="formBasicText">
             <FormControl
+              className="description"
               type="text"
               value={this.state.description}
               name="description"
@@ -82,6 +84,7 @@ class GistForm extends PureComponent {
               onChange={this.handleChange}
             />
             <FormControl
+              className="filename"
               type="text"
               value={this.state.filename}
               name="filename"
@@ -89,6 +92,8 @@ class GistForm extends PureComponent {
               onChange={this.handleChange}
             />
             <FormControl
+              componentClass="textarea"
+              rows={20}
               type="textarea"
               value={this.state.content}
               name="content"

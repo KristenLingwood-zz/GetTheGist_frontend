@@ -10,11 +10,31 @@
 
 #gist_description {
   color: blue;
+  font-weight: bold;
   background-color: #efefef;
-  margin: 0;
+  margin-bottom: 0;
+  padding: 1%;
 }
 
 .gist_info {
   color: black;
   border-top: 1px solid #d9d9d9;
+}
+
+.edit_form {
+  margin-top: 4%;
+}
+
+#delete_button {
+  margin: 1%;
+  float: right;
+}
+
+#edit_button {
+  margin: 1%;
+  float: left;
+}
+
+h6 {
+  margin-left: 1%;
 }

@@ -23,12 +23,17 @@ class GistHome extends PureComponent {
     let gistList = this.state.gists.map(g => (
       <div className="gist_link" key={g.id}>
         <i className="fas fa-code code_icon" />
-        <div className="gist_info">
-          <a href={`/gists/${g.id}`}>{g.filename}</a>
+        <div>
+          <a className="gisthome_link" href={`/gists/${g.id}`}>
+            {g.filename}
+          </a>
           <p>{g.description}</p>
         </div>
       </div>
     ));
+    if (gistList.length > 4) {
+      gistList = gistList.slice(0, 4);
+    }
     return (
       <div>
         <div className="gist_list">{gistList}</div>

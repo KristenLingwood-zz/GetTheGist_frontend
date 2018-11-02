@@ -5,10 +5,8 @@ import {
   NavItem,
   FormGroup,
   FormControl,
-  Button,
-  Image
+  Button
 } from 'react-bootstrap';
-import './assets/femalecodercat.jpg';
 import './header.css';
 
 const DEFAULT_STATE = {
@@ -37,8 +35,11 @@ class Header extends PureComponent {
       <Navbar inverse defaultExpanded fixedTop fluid>
         <Navbar.Header>
           <Navbar.Brand>
-            <Image src={'/assets/femalecodercat.jpg'} circle responsive />
-            <a href="/">GetTheGist</a>
+            <a href="/gists">
+              <i className="fas fa-cat" />
+              {'  '}
+              GetTheGist
+            </a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -51,7 +52,7 @@ class Header extends PureComponent {
                 placeholder="Search"
                 onChange={this.handleChange}
               />
-            </FormGroup>{' '}
+            </FormGroup>
             <Button type="submit" onSubmit={this.handleSearch}>
               Submit
             </Button>

@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import GistsHome from './GistsHome';
 import Gist from './Gist';
+import Custom404 from './Custom404';
 
 class Routes extends PureComponent {
   render() {
@@ -10,6 +11,8 @@ class Routes extends PureComponent {
         <Switch>
           <Route exact path="/gists" component={GistsHome} />
           <Route path="/gists/:gistID" component={Gist} />
+          <Redirect exact from="/" to="/gists" />
+          <Route component={Custom404} />
         </Switch>
       </div>
     );

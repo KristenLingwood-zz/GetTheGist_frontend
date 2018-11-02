@@ -16,3 +16,12 @@
   padding: 3%;
   padding-right: 10%;
 }
+
+.gisthome_link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+i {
+  color: white;
+}

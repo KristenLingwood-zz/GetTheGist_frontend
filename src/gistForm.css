@@ -1,0 +1,16 @@
+.gist_form {
+  margin-top: 5%;
+  border-radius: 2%;
+}
+
+.description {
+  margin-bottom: 2%;
+}
+
+.filename {
+  margin-bottom: 1%;
+}
+
+button {
+  float: right;
+}

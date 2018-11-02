@@ -7,6 +7,7 @@ import { Button } from 'react-bootstrap';
 class Gist extends PureComponent {
   state = {
     foundGist: {},
+    edit: false,
     loading: true
   };
   async componentDidMount() {
@@ -19,6 +20,10 @@ class Gist extends PureComponent {
       console.log(err);
     }
   }
+
+  toggleEdit = () => {
+    this.setState(prevState => ({ ...this.state, edit: !prevState.edit }));
+  };
 
   handleDelete = async e => {
     window.alert(
@@ -35,18 +40,32 @@ class Gist extends PureComponent {
       console.log(err);
     }
   };
+
   render() {
     let fileName = this.state.foundGist.filename;
     let description = this.state.foundGist.description;
     let content = this.state.foundGist.content;
-
+    let editForm;
+    if (this.state.edit) {
+      editForm = (
+        <div className="edit_form">
+          <GistForm
+            update={true}
+            foundGist={this.state.foundGist}
+            gistID={this.props.match.params.gistID}
+          />
+        </div>
+      );
+    } else {
+      editForm = <div />;
+    }
     return (
       <div>
         <div className="found_gist">
           <p id="gist_description">{description}</p>
           <div className="gist_info">
             <h6>{fileName}</h6>
-            <p>{content}</p>
+            <h6>{content}</h6>
             <Button
               id="delete_button"
               onClick={this.handleDelete}
@@ -55,13 +74,17 @@ class Gist extends PureComponent {
             >
               DELETE
             </Button>
+            <Button
+              id="edit_button"
+              onClick={this.toggleEdit}
+              bsStyle="info"
+              bsSize="small"
+            >
+              Edit Gist
+            </Button>
           </div>
         </div>
-        <GistForm
-          update={true}
-          foundGist={this.state.foundGist}
-          gistID={this.props.match.params.gistID}
-        />
+        {editForm}
       </div>
     );
   }
