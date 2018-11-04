@@ -4,7 +4,7 @@
 
 ### To run frontend locally:
 
-1. Start the backend server found here: `https://github.com/KristenLingwood/GetTheGist_backend` (directions in repo README)
+1. Start the backend server found [here](https://github.com/KristenLingwood/GetTheGist_backend)
 2. Fork/clone the repository
 3. cd into repo's folder
 4. `npm install`

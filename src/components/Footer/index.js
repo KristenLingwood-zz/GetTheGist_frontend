@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
 import './footer.css';
 import coderCat from '../../assets/femalecodercat.jpg';
 

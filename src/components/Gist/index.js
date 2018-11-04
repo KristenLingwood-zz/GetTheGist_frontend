@@ -3,6 +3,7 @@ import { callAPI } from '../../services/api';
 import './gist.css';
 import GistForm from '../GistForm';
 import { Button } from 'react-bootstrap';
+import axios from 'axios';
 
 class Gist extends PureComponent {
   state = {
@@ -24,6 +25,27 @@ class Gist extends PureComponent {
 
   toggleEdit = () => {
     this.setState(prevState => ({ ...this.state, edit: !prevState.edit }));
+  };
+
+  // bitly does not support non-hosted urls, so a dummy link is used here.
+  createSlug = async () => {
+    try {
+      let currentURL = this.props.history.location.pathname;
+      let response = await axios({
+        method: 'post',
+        url: 'https://api-ssl.bitly.com/v4/bitlinks',
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_BITLY_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        // data: { long_url: `http://localhost:3001${currentURL}`}
+        data: { long_url: 'http://kristenlingwood.com' }
+      });
+      console.log(response);
+      window.alert(`Your url slug is ${response.data.link}`);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   handleDelete = async e => {
@@ -76,6 +98,14 @@ class Gist extends PureComponent {
               bsSize="small"
             >
               DELETE
+            </Button>
+            <Button
+              id="slug_button"
+              onClick={this.createSlug}
+              bsStyle="primary"
+              bsSize="small"
+            >
+              Get custom url
             </Button>
             <Button
               id="edit_button"
