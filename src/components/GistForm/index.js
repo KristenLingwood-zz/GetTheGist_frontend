@@ -37,8 +37,6 @@ class GistForm extends PureComponent {
     }
   };
   handleUpdateSubmit = async e => {
-    console.log('update clicked');
-
     let payload = {
       description: this.state.description || this.props.foundGist.description,
       filename: this.state.filename || this.props.foundGist.filename,
@@ -47,7 +45,6 @@ class GistForm extends PureComponent {
     };
     try {
       let gistID = this.props.gistID;
-      console.log(gistID);
       await callAPI('patch', `http://localhost:3000/gists/${gistID}`, payload);
       window.alert('Your gist has been updated!');
       this.setState({
@@ -55,8 +52,7 @@ class GistForm extends PureComponent {
         filename: '',
         content: ''
       });
-      // ideally shouldn't need, should be able to utilize component lifecycle
-      window.location.reload();
+      this.props.editing();
     } catch (err) {
       console.log(err);
     }
@@ -75,7 +71,7 @@ class GistForm extends PureComponent {
 
     return (
       <div className="gist_form">
-        <form action="">
+        <form>
           <FormGroup controlId="formBasicText">
             <FormControl
               className="description"

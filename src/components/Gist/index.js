@@ -30,7 +30,7 @@ class Gist extends PureComponent {
   // bitly does not support non-hosted urls, so a dummy link is used here.
   createSlug = async () => {
     try {
-      let currentURL = this.props.history.location.pathname;
+      // let currentURL = this.props.history.location.pathname;
       let response = await axios({
         method: 'post',
         url: 'https://api-ssl.bitly.com/v4/bitlinks',
@@ -76,6 +76,8 @@ class Gist extends PureComponent {
             update={true}
             foundGist={this.state.foundGist}
             gistID={this.props.match.params.gistID}
+            // toggle edit triggers state change for Gist component. Calling it on props of child GistForm triggers state of parent to update, which causes the component to re-render.
+            editing={this.toggleEdit}
           />
         </div>
       );
