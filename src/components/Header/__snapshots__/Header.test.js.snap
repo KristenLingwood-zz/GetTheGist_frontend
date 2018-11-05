@@ -106,7 +106,7 @@ exports[`<Header /> matches the snapshot 1`] = `
           role="presentation"
         >
           <a
-            href="/new"
+            href="/gists"
             onClick={[Function]}
             onKeyDown={[Function]}
           >

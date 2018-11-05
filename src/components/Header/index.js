@@ -66,7 +66,7 @@ class Header extends PureComponent {
             </NavItem>
           </Nav>
           <Nav pullRight>
-            <NavItem eventKey={1} href="/new">
+            <NavItem eventKey={1} href="/gists">
               New gist
             </NavItem>
             <NavItem eventKey={2} href="#">

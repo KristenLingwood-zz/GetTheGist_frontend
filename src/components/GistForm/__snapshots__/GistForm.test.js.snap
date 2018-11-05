@@ -4,9 +4,7 @@ exports[`<GistForm /> matches the snapshot 1`] = `
 <div
   className="gist_form"
 >
-  <form
-    action=""
-  >
+  <form>
     <div
       className="form-group"
     >

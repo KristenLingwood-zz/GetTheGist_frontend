@@ -41,7 +41,6 @@ class Gist extends PureComponent {
         // data: { long_url: `http://localhost:3001${currentURL}`}
         data: { long_url: 'http://kristenlingwood.com' }
       });
-      console.log(response);
       window.alert(`Your url slug is ${response.data.link}`);
     } catch (err) {
       console.log(err);
