@@ -11,7 +11,7 @@ class Routes extends PureComponent {
         <Switch>
           <Route exact path="/gists" component={GistsHome} />
           <Route path="/gists/:gistID" component={Gist} />
-          <Redirect exact from="/" to="/gists" />
+          {/* <Route exact path="/" render={() => <Redirect to="/gists" />} /> */}
           <Route component={Custom404} />
         </Switch>
       </div>

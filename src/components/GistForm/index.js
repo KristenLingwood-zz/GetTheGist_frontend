@@ -19,7 +19,6 @@ class GistForm extends PureComponent {
   handleNewSubmit = async e => {
     let extension =
       this.state.filename.slice(this.state.filename.indexOf('.') + 1) || '';
-    console.log(extension);
     let payload = {
       description: this.state.description,
       filename: this.state.filename,
@@ -35,6 +34,7 @@ class GistForm extends PureComponent {
         content: '',
         fireRedirect: true
       });
+      this.props.updateGistList();
     } catch (err) {
       console.log(err);
     }
@@ -52,7 +52,11 @@ class GistForm extends PureComponent {
       let gistID = this.props.gistID;
       let extension =
         this.state.filename.slice(this.state.filename.indexOf('.')) || '';
-      await callAPI('patch', `http://localhost:3000/gists/${gistID}`, payload);
+      let updatedGist = await callAPI(
+        'patch',
+        `http://localhost:3000/gists/${gistID}`,
+        payload
+      );
       window.alert('Your gist has been updated!');
       this.setState({
         description: '',
@@ -60,6 +64,7 @@ class GistForm extends PureComponent {
         content: ''
       });
       this.props.editing();
+      this.props.updateGist(updatedGist);
     } catch (err) {
       console.log(err);
     }

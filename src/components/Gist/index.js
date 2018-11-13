@@ -27,6 +27,10 @@ class Gist extends PureComponent {
     this.setState(prevState => ({ ...this.state, edit: !prevState.edit }));
   };
 
+  updateGist = updatedGist => {
+    this.setState(prevState => ({ ...this.state, foundGist: updatedGist }));
+  };
+
   // bitly does not support non-hosted urls, so a dummy link is used here.
   createSlug = async () => {
     try {
@@ -77,6 +81,7 @@ class Gist extends PureComponent {
             gistID={this.props.match.params.gistID}
             // toggle edit triggers state change for Gist component. Calling it on props of child GistForm triggers state of parent to update, which causes the component to re-render.
             editing={this.toggleEdit}
+            updateGist={this.updateGist}
           />
         </div>
       );
