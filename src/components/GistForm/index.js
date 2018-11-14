@@ -3,6 +3,14 @@ import { FormControl, FormGroup, Button } from 'react-bootstrap';
 import { callAPI } from '../../services/api';
 import './gistForm.css';
 import AceEditor from 'react-ace';
+import 'brace/mode/java';
+import 'brace/mode/javascript';
+import 'brace/mode/html';
+import 'brace/mode/python';
+import 'brace/mode/ruby';
+import 'brace/mode/markdown';
+import 'brace/mode/text';
+import 'brace/theme/github';
 
 class GistForm extends PureComponent {
   state = {
@@ -87,6 +95,20 @@ class GistForm extends PureComponent {
       handleSubmit = this.handleNewSubmit;
     }
 
+    let languageStore = {
+      js: 'javascript',
+      html: 'html',
+      jsp: 'java',
+      py: 'python',
+      rb: 'ruby',
+      md: 'markdown',
+      txt: 'text'
+    };
+    let extension =
+      this.state.filename.slice(this.state.filename.indexOf('.') + 1) ||
+      'markdown';
+    let modeLanguage = languageStore[extension];
+
     return (
       <div className="gist_form">
         <form>
@@ -108,7 +130,7 @@ class GistForm extends PureComponent {
               onChange={this.handleChange}
             />
             <AceEditor
-              mode="java"
+              mode={modeLanguage}
               theme="github"
               editorProps={{ $blockScrolling: true }}
               componentClass="textarea"
