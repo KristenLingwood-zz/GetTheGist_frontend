@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { FormControl, FormGroup, Button } from 'react-bootstrap';
 import { callAPI } from '../../services/api';
 import './gistForm.css';
+import AceEditor from 'react-ace';
 
 class GistForm extends PureComponent {
   state = {
@@ -14,6 +15,11 @@ class GistForm extends PureComponent {
 
   handleChange = e => {
     this.setState({ ...this.state, [e.target.name]: e.target.value });
+  };
+
+  handleContentChange = e => {
+    console.log('event', e);
+    this.setState({ ...this.state, content: e });
   };
 
   handleNewSubmit = async e => {
@@ -101,17 +107,23 @@ class GistForm extends PureComponent {
               placeholder="Filename including extension"
               onChange={this.handleChange}
             />
-            <FormControl
+            <AceEditor
+              mode="java"
+              theme="github"
+              editorProps={{ $blockScrolling: true }}
               componentClass="textarea"
               rows={20}
               type="textarea"
               value={this.state.content}
               name="content"
-              placeholder="Gist content"
-              onChange={this.handleChange}
+              onChange={this.handleContentChange}
             />
           </FormGroup>
-          <Button bsStyle="primary" onClick={handleSubmit}>
+          <Button
+            bsStyle="primary"
+            className="Button --narrow--solid-brand"
+            onClick={handleSubmit}
+          >
             {buttonText}
           </Button>
         </form>

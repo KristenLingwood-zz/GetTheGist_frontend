@@ -1,3 +1,5 @@
+@import '../App/pinacolada.css';
+
 .gist_list {
   margin-top: 8%;
   display: flex;

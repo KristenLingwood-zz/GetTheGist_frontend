@@ -5,7 +5,7 @@ import coderCat from '../../assets/femalecodercat.jpg';
 class Footer extends PureComponent {
   render() {
     return (
-      <div className="footer_links">
+      <div className="footer_links fontSmall">
         <div className="footer_left">
           <p>
             <i className="far fa-copyright" /> 2018 Kristen Lingwood

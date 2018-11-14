@@ -53,7 +53,11 @@ class Header extends PureComponent {
                 onChange={this.handleChange}
               />
             </FormGroup>
-            <Button type="submit" onSubmit={this.handleSearch}>
+            <Button
+              type="submit"
+              className="Button --narrow--small--solid-brand marginLeft-1"
+              onSubmit={this.handleSearch}
+            >
               Submit
             </Button>
           </Navbar.Form>
